@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'authorizer-basic-auth-login',
-  template: `{{ body }}`,
+  template: `<div>{{ body }}</div>`,
   styles: [],
 })
 export class AuthorizerBasicAuthLogin implements OnInit {
