@@ -6,6 +6,6 @@ Authorizer angular SDK. This repo is still work under progress.
 
 ```
 step 1 - npm install --save
-step 2 - npm run watch
+step 2 - npm run dev
 step 3 - npm start
 ```
