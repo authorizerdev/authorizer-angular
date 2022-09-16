@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build authorizer-angular",
     "dev": "ng build authorizer-angular --watch --configuration development",
+    "example": "ng serve example --port 4000",
     "test": "ng test"
   },
   "private": true,
