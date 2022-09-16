@@ -7,6 +7,5 @@ Authorizer angular SDK. This repo is still work under progress.
 ```
 step 1 - npm install --save
 step 2 - ng build authorizer-angular --watch
-step 3 - cd projects/example
-step 4 - ng serve --port 4200
+step 3 - ng serve --port 4200
 ```
