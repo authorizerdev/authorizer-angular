@@ -3,6 +3,7 @@ import { AuthorizerBasicAuthLogin } from './authorizer-basic-auth-login.componen
 import { AuthorizerForgotPassword } from './authorizer-forgot-password.component';
 import { AuthorizerMagicLinkLogin } from './authorizer-magic-link-login.component';
 import { AuthorizerResetPassword } from './authorizer-reset-password.component';
+import { AuthorizerRoot } from './authorizer-root.component';
 
 export {
   AuthorizerProvider,
@@ -10,4 +11,5 @@ export {
   AuthorizerForgotPassword,
   AuthorizerMagicLinkLogin,
   AuthorizerResetPassword,
+  AuthorizerRoot,
 };
