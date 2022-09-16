@@ -4,6 +4,7 @@ import {
   AuthorizerBasicAuthLogin,
   AuthorizerForgotPassword,
   AuthorizerMagicLinkLogin,
+  AuthorizerResetPassword,
 } from './components';
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import {
     AuthorizerBasicAuthLogin,
     AuthorizerForgotPassword,
     AuthorizerMagicLinkLogin,
+    AuthorizerResetPassword,
   ],
   imports: [],
   exports: [
@@ -18,6 +20,7 @@ import {
     AuthorizerBasicAuthLogin,
     AuthorizerForgotPassword,
     AuthorizerMagicLinkLogin,
+    AuthorizerResetPassword,
   ],
 })
 export class AuthorizerModule {}
