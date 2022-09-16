@@ -6,4 +6,4 @@ import { AuthorizerProvider } from './authorizer-provider.component';
   imports: [],
   exports: [AuthorizerProvider],
 })
-export class AuthorizerAngularModule {}
+export class AuthorizerModule {}
