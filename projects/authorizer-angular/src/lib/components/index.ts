@@ -5,6 +5,7 @@ import { AuthorizerMagicLinkLogin } from './authorizer-magic-link-login.componen
 import { AuthorizerResetPassword } from './authorizer-reset-password.component';
 import { AuthorizerRoot } from './authorizer-root.component';
 import { AuthorizerSignup } from './authorizer-signup.component';
+import { AuthorizerSocialLogin } from './authorizer-social-login.component';
 
 export {
   AuthorizerProvider,
@@ -14,4 +15,5 @@ export {
   AuthorizerResetPassword,
   AuthorizerRoot,
   AuthorizerSignup,
+  AuthorizerSocialLogin,
 };

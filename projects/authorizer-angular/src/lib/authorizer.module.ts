@@ -7,6 +7,7 @@ import {
   AuthorizerResetPassword,
   AuthorizerRoot,
   AuthorizerSignup,
+  AuthorizerSocialLogin,
 } from './components';
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {
     AuthorizerResetPassword,
     AuthorizerRoot,
     AuthorizerSignup,
+    AuthorizerSocialLogin,
   ],
   imports: [],
   exports: [
@@ -27,6 +29,7 @@ import {
     AuthorizerResetPassword,
     AuthorizerRoot,
     AuthorizerSignup,
+    AuthorizerSocialLogin,
   ],
 })
 export class AuthorizerModule {}
