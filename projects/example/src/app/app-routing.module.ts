@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'reset-password',
     component: ResetPasswordView,
   },
+  {
+    path: '**',
+    redirectTo: '/',
+  },
 ];
 
 @NgModule({
