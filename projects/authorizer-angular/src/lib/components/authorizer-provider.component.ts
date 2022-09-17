@@ -1,15 +1,35 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { AuthorizerContextService } from '../authorizer-context.service';
 
 @Component({
   selector: 'authorizer-provider',
-  template: `<div [style.color]="color">{{ body }}</div>`,
+  template: `<ng-content></ng-content>`,
   styles: [],
 })
-export class AuthorizerProvider implements OnInit {
-  @Input() color: string = '#000';
-  @Input() body: string = 'Authorizer Provider Component';
+export class AuthorizerProvider implements OnInit, OnChanges {
+  @Input() config: Record<string, any> = {};
+  @Input() onStateChangeCallback?: Function;
 
-  constructor() {}
+  state: Record<string, any> = {};
 
-  ngOnInit(): void {}
+  constructor(private contextService: AuthorizerContextService) {
+    contextService.getState().subscribe((state) => {
+      this.state = state;
+    });
+  }
+
+  ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.contextService.setState({
+    //     ...this.state,
+    //     user: 'anik',
+    //   });
+    // }, 2000);
+  }
+
+  ngOnChanges(state: any): void {
+    if (this.state && this.onStateChangeCallback) {
+      this.onStateChangeCallback(this.state);
+    }
+  }
 }

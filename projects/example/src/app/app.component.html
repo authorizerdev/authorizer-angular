@@ -10,15 +10,16 @@
 </style>
 
 <div>
-  <authorizer-provider></authorizer-provider>
-  <authorizer-basic-auth-login></authorizer-basic-auth-login>
-  <authorizer-forgot-password></authorizer-forgot-password>
-  <authorizer-magic-link-login></authorizer-magic-link-login>
-  <authorizer-reset-password></authorizer-reset-password>
-  <authorizer></authorizer>
-  <authorizer-signup></authorizer-signup>
-  <authorizer-social-login></authorizer-social-login>
-  <authorizer-verify-otp></authorizer-verify-otp>
+  <authorizer-provider [onStateChangeCallback]="stateChangeCallback.bind(this)">
+    <authorizer-basic-auth-login></authorizer-basic-auth-login>
+    <authorizer-forgot-password></authorizer-forgot-password>
+    <authorizer-magic-link-login></authorizer-magic-link-login>
+    <authorizer-reset-password></authorizer-reset-password>
+    <authorizer></authorizer>
+    <authorizer-signup></authorizer-signup>
+    <authorizer-social-login></authorizer-social-login>
+    <authorizer-verify-otp></authorizer-verify-otp>
+  </authorizer-provider>
 </div>
 
 <router-outlet></router-outlet>

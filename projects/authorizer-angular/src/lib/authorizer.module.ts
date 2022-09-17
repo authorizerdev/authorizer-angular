@@ -10,6 +10,7 @@ import {
   AuthorizerSocialLogin,
   AuthorizerVerifyOtp,
 } from './components';
+import { AuthorizerContextService } from './authorizer-context.service';
 @NgModule({
   declarations: [
     AuthorizerProvider,
@@ -34,5 +35,6 @@ import {
     AuthorizerSocialLogin,
     AuthorizerVerifyOtp,
   ],
+  providers: [AuthorizerContextService],
 })
 export class AuthorizerModule {}
