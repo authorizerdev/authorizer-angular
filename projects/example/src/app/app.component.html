@@ -10,7 +10,9 @@
 </style>
 
 <div>
-  <authorizer-provider [onStateChangeCallback]="stateChangeCallback.bind(this)">
+  <authorizer-provider [config]="{
+      authorizerURL: 'http://localhost:8080'
+    }" [onStateChangeCallback]="stateChangeCallback.bind(this)">
     <authorizer-basic-auth-login></authorizer-basic-auth-login>
     <authorizer-forgot-password></authorizer-forgot-password>
     <authorizer-magic-link-login></authorizer-magic-link-login>
