@@ -1,27 +1,34 @@
 <style>
-  /* :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  } */
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .component-warpper {
+    width: 400px;
+    margin: 10px auto;
+    border: 1px solid #d1d5db;
+    padding: 25px 20px;
+    border-radius: 5px;
+  }
 </style>
 
-<div>
-  <authorizer-provider [config]="{
+<div class="container">
+  <div class="component-warpper">
+    <authorizer-provider [config]="{
       authorizerURL: 'http://localhost:8080'
     }" [onStateChangeCallback]="stateChangeCallback.bind(this)">
-    <authorizer-basic-auth-login></authorizer-basic-auth-login>
-    <authorizer-forgot-password></authorizer-forgot-password>
-    <authorizer-magic-link-login></authorizer-magic-link-login>
-    <authorizer-reset-password></authorizer-reset-password>
-    <authorizer></authorizer>
-    <authorizer-signup></authorizer-signup>
-    <authorizer-social-login></authorizer-social-login>
-    <authorizer-verify-otp></authorizer-verify-otp>
-  </authorizer-provider>
+      <authorizer-basic-auth-login></authorizer-basic-auth-login>
+      <authorizer-forgot-password></authorizer-forgot-password>
+      <authorizer-magic-link-login></authorizer-magic-link-login>
+      <authorizer-reset-password></authorizer-reset-password>
+      <authorizer></authorizer>
+      <authorizer-signup></authorizer-signup>
+      <authorizer-social-login></authorizer-social-login>
+      <authorizer-verify-otp></authorizer-verify-otp>
+    </authorizer-provider>
+  </div>
 </div>
+
 
 <router-outlet></router-outlet>
