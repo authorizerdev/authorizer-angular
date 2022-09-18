@@ -23,7 +23,11 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from './icons';
-import { StyledWrapper, StyledSeparator } from './styledComponents';
+import {
+  StyledWrapper,
+  StyledSeparator,
+  StyledButton,
+} from './styledComponents';
 @NgModule({
   declarations: [
     AuthorizerProvider,
@@ -46,6 +50,7 @@ import { StyledWrapper, StyledSeparator } from './styledComponents';
     TwitterIcon,
     StyledWrapper,
     StyledSeparator,
+    StyledButton,
   ],
   imports: [BrowserModule],
   exports: [

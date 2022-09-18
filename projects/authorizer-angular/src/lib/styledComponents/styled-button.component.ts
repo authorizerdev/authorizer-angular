@@ -32,7 +32,7 @@ import { ButtonAppearance } from '../constants';
         display: flex;
         justify-content: center;
         align-items: center;
-        min-width: 375px;
+        min-width: 400px;
         max-height: 64px;
         border-radius: var(--radius-button);
         border-color: var(--text-color) !important;

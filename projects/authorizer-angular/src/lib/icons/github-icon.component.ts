@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'github',
-  template: `<div style="position: absolute; left: 10px; display: flex;">
+  template: `<div
+    style="position: absolute; left: 10px; top: 12px; display: flex;"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 291.32 291.32"

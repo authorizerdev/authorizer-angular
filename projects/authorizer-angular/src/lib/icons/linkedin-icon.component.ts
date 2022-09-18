@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'linkedin',
-  template: `<div style="position: absolute; left: 10px; display: flex;">
+  template: `<div
+    style="position: absolute; left: 8px; top: 7.5px; display: flex;"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"

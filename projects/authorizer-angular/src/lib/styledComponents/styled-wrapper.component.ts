@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
         font-size: var(--fonts-medium-text);
         box-sizing: border-box;
         width: 100%;
+        height: 100%;
       }
       .styled-wrapper *,
       *:before,
