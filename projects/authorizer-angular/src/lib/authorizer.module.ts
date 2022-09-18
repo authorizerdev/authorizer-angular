@@ -27,6 +27,8 @@ import {
   StyledWrapper,
   StyledSeparator,
   StyledButton,
+  StyledLink,
+  StyledFooter,
 } from './styledComponents';
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import {
     StyledWrapper,
     StyledSeparator,
     StyledButton,
+    StyledLink,
+    StyledFooter,
   ],
   imports: [BrowserModule],
   exports: [
