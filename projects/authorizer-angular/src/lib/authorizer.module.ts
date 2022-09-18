@@ -13,6 +13,15 @@ import {
 import { Message } from './components/message.component';
 import { PasswordStrengthIndicator } from './components/password-strength-indicator.component';
 import { AuthorizerContextService } from './authorizer-context.service';
+import {
+  AppleIcon,
+  CloseIcon,
+  FacebookIcon,
+  GithubIcon,
+  GoogleIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from './icons';
 @NgModule({
   declarations: [
     AuthorizerProvider,
@@ -26,6 +35,13 @@ import { AuthorizerContextService } from './authorizer-context.service';
     AuthorizerVerifyOtp,
     Message,
     PasswordStrengthIndicator,
+    AppleIcon,
+    CloseIcon,
+    FacebookIcon,
+    GithubIcon,
+    GoogleIcon,
+    LinkedinIcon,
+    TwitterIcon,
   ],
   imports: [],
   exports: [

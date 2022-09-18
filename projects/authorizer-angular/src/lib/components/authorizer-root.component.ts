@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'authorizer',
-  template: `<div>{{ body }}</div>`,
+  template: `<div style="position: relative;"></div>`,
   styles: [],
 })
 export class AuthorizerRoot implements OnInit {
