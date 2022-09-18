@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Authorizer } from '@authorizerdev/authorizer-js';
 import { AuthorizerContextService } from '../authorizer-context.service';
 import { AuthorizerProviderActionType } from '../constants';
@@ -29,13 +29,14 @@ import { hasWindow } from '../utils/window';
     `,
   ],
 })
-export class AuthorizerProvider implements OnInit, OnChanges {
+export class AuthorizerProvider implements OnInit {
   @Input() config: Record<string, any> = {};
   @Input() onStateChangeCallback?: Function;
 
   constructor(private contextService: AuthorizerContextService) {
     contextService.getState().subscribe((state) => {
       this.state = state;
+      this.onStateChangeCallback && this.onStateChangeCallback(state);
     });
   }
 
@@ -199,11 +200,5 @@ export class AuthorizerProvider implements OnInit, OnChanges {
         });
       },
     });
-  }
-
-  ngOnChanges(state: any): void {
-    if (JSON.stringify(this.state) !== '{}' && this.onStateChangeCallback) {
-      this.onStateChangeCallback(this.state);
-    }
   }
 }
