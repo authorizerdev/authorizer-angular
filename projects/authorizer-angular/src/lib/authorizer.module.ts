@@ -10,6 +10,8 @@ import {
   AuthorizerSocialLogin,
   AuthorizerVerifyOtp,
 } from './components';
+import { Message } from './components/message.component';
+import { PasswordStrengthIndicator } from './components/password-strength-indicator';
 import { AuthorizerContextService } from './authorizer-context.service';
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { AuthorizerContextService } from './authorizer-context.service';
     AuthorizerSignup,
     AuthorizerSocialLogin,
     AuthorizerVerifyOtp,
+    Message,
+    PasswordStrengthIndicator,
   ],
   imports: [],
   exports: [
