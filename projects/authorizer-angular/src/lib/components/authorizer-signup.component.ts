@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: [],
 })
 export class AuthorizerSignup implements OnInit {
-  @Input() setView: any;
   @Input() onSignup: any;
   @Input() urlProps: any = {};
 

@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styles: [],
 })
 export class AuthorizerForgotPassword implements OnInit {
-  @Input() setView: any;
   @Input() onForgotPassword: any;
   @Input() urlProps: any = {};
 

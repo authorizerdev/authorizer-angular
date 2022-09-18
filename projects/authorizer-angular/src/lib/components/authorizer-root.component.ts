@@ -15,9 +15,9 @@ import { hasWindow } from '../utils/window';
           state['config'].is_basic_authentication_enabled &&
           !state['config'].is_magic_link_login_enabled
         "
-        [setView]="setView"
         [onLogin]="onLogin"
         [urlProps]="urlProps"
+        (changeView)="setView($event)"
       ></authorizer-basic-auth-login>
       <authorizer-signup
         *ngIf="
@@ -26,7 +26,6 @@ import { hasWindow } from '../utils/window';
           !state['config'].is_magic_link_login_enabled &&
           state['config'].is_sign_up_enabled
         "
-        [setView]="setView"
         [onSignup]="onSignup"
         [urlProps]="urlProps"
       ></authorizer-signup>
@@ -39,7 +38,6 @@ import { hasWindow } from '../utils/window';
       ></authorizer-magic-link-login>
       <authorizer-forgot-password
         *ngIf="view === views.ForgotPassword"
-        [setView]="setView"
         [onForgotPassword]="onForgotPassword"
         [urlProps]="urlProps"
       ></authorizer-forgot-password>
