@@ -11,7 +11,7 @@ import {
   AuthorizerVerifyOtp,
 } from './components';
 import { Message } from './components/message.component';
-import { PasswordStrengthIndicator } from './components/password-strength-indicator';
+import { PasswordStrengthIndicator } from './components/password-strength-indicator.component';
 import { AuthorizerContextService } from './authorizer-context.service';
 @NgModule({
   declarations: [
