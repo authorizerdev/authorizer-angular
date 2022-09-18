@@ -6,11 +6,52 @@ import { hasWindow } from '../utils/window';
 
 @Component({
   selector: 'authorizer',
-  template: `<div style="position: relative;"></div>`,
+  template: `
+    <styled-wrapper>
+      <authorizer-social-login [urlProps]="urlProps"></authorizer-social-login>
+      <authorizer-basic-auth-login
+        *ngIf="
+          view === views.Login &&
+          state['config'].is_basic_authentication_enabled &&
+          !state['config'].is_magic_link_login_enabled
+        "
+        [setView]="setView"
+        [onLogin]="onLogin"
+        [urlProps]="urlProps"
+      ></authorizer-basic-auth-login>
+      <authorizer-signup
+        *ngIf="
+          view === views.Signup &&
+          state['config'].is_basic_authentication_enabled &&
+          !state['config'].is_magic_link_login_enabled &&
+          state['config'].is_sign_up_enabled
+        "
+        [setView]="setView"
+        [onSignup]="onSignup"
+        [urlProps]="urlProps"
+      ></authorizer-signup>
+      <authorizer-magic-link-login
+        *ngIf="
+          view === views.Login && state['config'].is_magic_link_login_enabled
+        "
+        [onMagicLinkLogin]="onMagicLinkLogin"
+        [urlProps]="urlProps"
+      ></authorizer-magic-link-login>
+      <authorizer-forgot-password
+        *ngIf="view === views.ForgotPassword"
+        [setView]="setView"
+        [onForgotPassword]="onForgotPassword"
+        [urlProps]="urlProps"
+      ></authorizer-forgot-password>
+    </styled-wrapper>
+  `,
   styles: [],
 })
 export class AuthorizerRoot implements OnInit {
-  @Input() body: string = 'Authorizer Root Component';
+  @Input() onLogin: any;
+  @Input() onSignup: any;
+  @Input() onMagicLinkLogin: any;
+  @Input() onForgotPassword: any;
 
   constructor(private contextService: AuthorizerContextService) {
     contextService.getState().subscribe((state) => {
@@ -21,6 +62,7 @@ export class AuthorizerRoot implements OnInit {
   state: Record<string, any> = {};
   view: string = Views.Login;
   urlProps: Record<string, any> = {};
+  views: any = Views;
 
   setView(viewType: string) {
     if (viewType) this.view = viewType;

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import {
   AuthorizerProvider,
   AuthorizerBasicAuthLogin,
@@ -22,6 +23,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from './icons';
+import { StyledWrapper } from './styledComponents';
 @NgModule({
   declarations: [
     AuthorizerProvider,
@@ -42,8 +44,9 @@ import {
     GoogleIcon,
     LinkedinIcon,
     TwitterIcon,
+    StyledWrapper,
   ],
-  imports: [],
+  imports: [BrowserModule],
   exports: [
     AuthorizerProvider,
     AuthorizerBasicAuthLogin,

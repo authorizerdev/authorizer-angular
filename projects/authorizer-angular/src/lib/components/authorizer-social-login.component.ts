@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'authorizer-social-login',
-  template: `<div>{{ body }}</div>`,
+  template: `<div>Authorizer Social Login Component</div>`,
   styles: [],
 })
 export class AuthorizerSocialLogin implements OnInit {
-  @Input() body: string = 'Authorizer Social Login Component';
+  @Input() urlProps: any = {};
 
   constructor() {}
 
