@@ -39,7 +39,7 @@ import { ButtonAppearance, MessageType, Views } from '../constants';
               *ngIf="email?.errors?.['required'] && (email?.dirty)"
               class="form-input-error"
             >
-              Email is required.
+              Email is required
             </div>
           </div>
           <div class="styled-form-group">
@@ -57,7 +57,7 @@ import { ButtonAppearance, MessageType, Views } from '../constants';
               *ngIf="password?.errors?.['required'] && (password?.dirty)"
               class="form-input-error"
             >
-              Password is required.
+              Password is required
             </div>
           </div>
           <br />
