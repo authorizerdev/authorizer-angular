@@ -24,7 +24,7 @@ import { createEmailValidator } from '../customValidators';
             (onClose)="onCloseHandler($event)"
           ></message>
         </ng-container>
-        <form [formGroup]="loginForm">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="styled-form-group">
             <label for="email" class="form-input-label"
               ><span> * </span>Email
@@ -141,5 +141,46 @@ export class AuthorizerBasicAuthLogin {
 
   setView(view: string) {
     this.changeView.emit(view);
+  }
+
+  async onSubmit() {
+    this.componentState['loading'] = true;
+    try {
+      const data: any = {
+        email: this.email?.value,
+        password: this.password?.value,
+      };
+      if (this.urlProps.scope) {
+        data.scope = this.urlProps.scope;
+      }
+      const res = await this.state['authorizerRef'].login(data);
+      if (res && res?.should_show_otp_screen) {
+        this.otpData = {
+          isScreenVisible: true,
+          email: data.email,
+        };
+        return;
+      }
+      if (res) {
+        this.componentState['error'] = null;
+        this.state['setAuthData']({
+          user: res.user || null,
+          token: {
+            access_token: res.access_token,
+            expires_in: res.expires_in,
+            refresh_token: res.refresh_token,
+            id_token: res.id_token,
+          },
+          config: this.state['config'],
+          loading: false,
+        });
+      }
+      if (this.onLogin) {
+        this.onLogin(res);
+      }
+    } catch (error: any) {
+      this.componentState['loading'] = false;
+      this.componentState['error'] = error.message;
+    }
   }
 }
