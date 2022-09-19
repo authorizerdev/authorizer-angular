@@ -1,11 +1,19 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthorizerContextService } from '../authorizer-context.service';
-import { Views } from '../constants';
+import { MessageType, Views } from '../constants';
 
 @Component({
   selector: 'authorizer-basic-auth-login',
   template: `
     <div>
+      <ng-container *ngIf="componentState['error']">
+        <message
+          [type]="messageType.Error"
+          [text]="componentState['error']"
+          [showClose]="true"
+          (onClose)="onCloseHandler($event)"
+        ></message>
+      </ng-container>
       <styled-footer>
         <styled-link
           (click)="setView(views.ForgotPassword)"
@@ -38,6 +46,15 @@ export class AuthorizerBasicAuthLogin implements OnInit {
 
   views: any = Views;
   state: Record<string, any> = {};
+  messageType: any = MessageType;
+  componentState: Record<string, any> = {
+    loading: false,
+    error: null,
+  };
+
+  onCloseHandler(stateKey: string) {
+    this.componentState[stateKey] = null;
+  }
 
   setView(view: string) {
     this.changeView.emit(view);
