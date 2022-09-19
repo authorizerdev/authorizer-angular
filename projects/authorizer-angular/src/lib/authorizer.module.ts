@@ -30,6 +30,7 @@ import {
   StyledLink,
   StyledFooter,
   StyledFlex,
+  StyledMessageWrapper,
 } from './styledComponents';
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {
     StyledLink,
     StyledFooter,
     StyledFlex,
+    StyledMessageWrapper,
   ],
   imports: [BrowserModule],
   exports: [
