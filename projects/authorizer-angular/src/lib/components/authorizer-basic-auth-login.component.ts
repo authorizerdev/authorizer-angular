@@ -73,9 +73,5 @@ export class AuthorizerBasicAuthLogin implements OnInit {
     this.changeView.emit(view);
   }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.otpData['isScreenVisible'] = true;
-    }, 2000);
-  }
+  ngOnInit(): void {}
 }

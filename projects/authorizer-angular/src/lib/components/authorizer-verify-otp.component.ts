@@ -7,6 +7,17 @@ import { Views } from '../constants';
   template: `
     <div>
       <styled-footer>
+        <div
+          style="margin-bottom: 10px;"
+          *ngIf="componentState['sendingOtp']; else other_content"
+        >
+          Sending ...
+        </div>
+        <ng-template #other_content>
+          <styled-link (click)="resendOtp()" marginBottom="10px">
+            Resend OTP
+          </styled-link>
+        </ng-template>
         <ng-container *ngIf="state['config'].is_sign_up_enabled">
           <styled-flex>
             Don't have an account?&nbsp;
@@ -31,11 +42,22 @@ export class AuthorizerVerifyOtp implements OnInit {
 
   views: any = Views;
   state: Record<string, any> = {};
+  componentState: Record<string, any> = {
+    error: null,
+    successMessage: null,
+    loading: false,
+    sendingOtp: false,
+    otp: null,
+  };
 
   setView(value: string) {
     if (this.changeViewEventEmitter) {
       this.changeViewEventEmitter.emit(value);
     }
+  }
+
+  resendOtp() {
+    console.log('resending otp ==>> ');
   }
 
   ngOnInit(): void {}
