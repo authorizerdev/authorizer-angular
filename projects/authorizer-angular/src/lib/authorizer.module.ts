@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   AuthorizerProvider,
   AuthorizerBasicAuthLogin,
@@ -60,7 +61,7 @@ import {
     StyledFlex,
     StyledMessageWrapper,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ReactiveFormsModule],
   exports: [
     AuthorizerProvider,
     AuthorizerBasicAuthLogin,
