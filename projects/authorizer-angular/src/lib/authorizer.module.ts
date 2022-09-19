@@ -29,6 +29,7 @@ import {
   StyledButton,
   StyledLink,
   StyledFooter,
+  StyledFlex,
 } from './styledComponents';
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {
     StyledButton,
     StyledLink,
     StyledFooter,
+    StyledFlex,
   ],
   imports: [BrowserModule],
   exports: [

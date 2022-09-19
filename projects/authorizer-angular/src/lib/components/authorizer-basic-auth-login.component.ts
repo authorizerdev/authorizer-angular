@@ -14,10 +14,10 @@ import { Views } from '../constants';
           Forgot Password?
         </styled-link>
         <ng-container *ngIf="state['config'].is_sign_up_enabled">
-          <div style="display: flex;">
+          <styled-flex>
             Don't have an account?&nbsp;
             <styled-link (click)="setView(views.Signup)">Sign Up</styled-link>
-          </div>
+          </styled-flex>
         </ng-container>
       </styled-footer>
     </div>
