@@ -3,7 +3,10 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'styled-link',
   template: `
-    <span class="styled-link" style="margin-bottom: {{ marginBottom }};">
+    <span
+      class="styled-link"
+      style="margin-bottom: {{ marginBottom }}; display: flex;"
+    >
       <ng-content></ng-content>
     </span>
   `,

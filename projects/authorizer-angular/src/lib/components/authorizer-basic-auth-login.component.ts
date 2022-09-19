@@ -6,15 +6,20 @@ import { Views } from '../constants';
   selector: 'authorizer-basic-auth-login',
   template: `
     <div>
-      <styled-link (click)="setView(views.ForgotPassword)" marginBottom="10px">
-        Forgot Password?
-      </styled-link>
-      <ng-container *ngIf="state['config'].is_sign_up_enabled">
-        <div>
-          Don't have an account?
-          <styled-link (click)="setView(views.Signup)"> Sign Up </styled-link>
-        </div>
-      </ng-container>
+      <styled-footer>
+        <styled-link
+          (click)="setView(views.ForgotPassword)"
+          marginBottom="10px"
+        >
+          Forgot Password?
+        </styled-link>
+        <ng-container *ngIf="state['config'].is_sign_up_enabled">
+          <div style="display: flex;">
+            Don't have an account?&nbsp;
+            <styled-link (click)="setView(views.Signup)">Sign Up</styled-link>
+          </div>
+        </ng-container>
+      </styled-footer>
     </div>
   `,
   styles: [],
