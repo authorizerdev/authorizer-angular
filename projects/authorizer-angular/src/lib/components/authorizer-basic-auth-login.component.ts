@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthorizerContextService } from '../authorizer-context.service';
 import { ButtonAppearance, MessageType, Views } from '../constants';
+import { createEmailValidator } from '../customValidators';
 
 @Component({
   selector: 'authorizer-basic-auth-login',
@@ -33,13 +34,19 @@ import { ButtonAppearance, MessageType, Views } from '../constants';
               type="text"
               formControlName="email"
               placeholder="eg. foo@bar.com"
-              class="form-input-field {{email?.errors?.['required'] && (email?.dirty) && 'input-error-content'}}"
+              class="form-input-field {{(email?.errors?.['required'] || email?.errors?.['invalidFormat']) && (email?.dirty) && 'input-error-content'}}"
             />
             <div
               *ngIf="email?.errors?.['required'] && (email?.dirty)"
               class="form-input-error"
             >
               Email is required
+            </div>
+            <div
+              *ngIf="email?.errors?.['invalidFormat'] && (email?.dirty)"
+              class="form-input-error"
+            >
+              Please enter valid email
             </div>
           </div>
           <div class="styled-form-group">
@@ -122,7 +129,7 @@ export class AuthorizerBasicAuthLogin implements OnInit {
   };
 
   loginForm = new FormGroup({
-    email: new FormControl(null, [Validators.required]),
+    email: new FormControl(null, [Validators.required, createEmailValidator()]),
     password: new FormControl(null, [Validators.required]),
   });
 
