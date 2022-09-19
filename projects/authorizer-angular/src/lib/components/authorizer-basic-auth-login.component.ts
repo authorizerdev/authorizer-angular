@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthorizerContextService } from '../authorizer-context.service';
 import { ButtonAppearance, MessageType, Views } from '../constants';
@@ -70,13 +70,7 @@ import { createEmailValidator } from '../customValidators';
           <br />
           <styled-button
             [appearance]="buttonAppearance.Primary"
-            [disabled]="
-              componentState['loading'] ||
-              !email?.value ||
-              !password?.value ||
-              email?.errors ||
-              password?.errors
-            "
+            [disabled]="componentState['loading'] || !loginForm.valid"
           >
             <ng-container *ngIf="componentState['loading']; else login_text">
               Processing ...
@@ -103,7 +97,7 @@ import { createEmailValidator } from '../customValidators';
   `,
   styleUrls: ['../styles/input-form.styles.css'],
 })
-export class AuthorizerBasicAuthLogin implements OnInit {
+export class AuthorizerBasicAuthLogin {
   @Input() onLogin: any;
   @Input() urlProps: any = {};
 
@@ -148,6 +142,4 @@ export class AuthorizerBasicAuthLogin implements OnInit {
   setView(view: string) {
     this.changeView.emit(view);
   }
-
-  ngOnInit(): void {}
 }
