@@ -40,6 +40,7 @@ import { hasWindow } from '../utils/window';
         *ngIf="view === views.ForgotPassword"
         [onForgotPassword]="onForgotPassword"
         [urlProps]="urlProps"
+        (changeView)="setView($event)"
       ></authorizer-forgot-password>
     </styled-wrapper>
   `,
