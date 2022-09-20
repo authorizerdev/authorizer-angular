@@ -99,12 +99,19 @@ import { passwordMatchingValidatior } from '../customValidators/password-matchin
           </div>
         </div>
         <ng-container *ngIf="state['config'].is_strong_password_enabled">
-          <password-strength-indicator></password-strength-indicator>
+          <password-strength-indicator
+            [value]="password?.value || ''"
+            (onButtonStateChange)="setDisableButton($event)"
+          ></password-strength-indicator>
           <br />
         </ng-container>
         <styled-button
           [appearance]="buttonAppearance.Primary"
-          [disabled]="componentState['loading'] || !signupForm.valid"
+          [disabled]="
+            componentState['disableSignupButton'] ||
+            componentState['loading'] ||
+            !signupForm.valid
+          "
         >
           <ng-container *ngIf="componentState['loading']; else signup_text">
             Processing ...

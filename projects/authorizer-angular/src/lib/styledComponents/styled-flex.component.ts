@@ -4,8 +4,8 @@ import { Component, Input } from '@angular/core';
   selector: 'styled-flex',
   template: `
     <div
-      class="styled-flex"
-      style="flex-direction: {{ flexDirection }};
+      style="display: flex;
+      flex-direction: {{ flexDirection }};
         align-items: {{ alignItems }};
         justify-content: {{ justifyContent }};
         flex-wrap: {{ wrap }};
@@ -14,13 +14,6 @@ import { Component, Input } from '@angular/core';
       <ng-content></ng-content>
     </div>
   `,
-  styles: [
-    `
-      .styled-flex {
-        display: flex;
-      }
-    `,
-  ],
 })
 export class StyledFlex {
   @Input() flexDirection: string = 'row';
