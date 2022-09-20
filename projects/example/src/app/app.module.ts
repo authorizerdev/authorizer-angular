@@ -4,13 +4,12 @@ import { AuthorizerModule, AuthorizerContextService } from 'authorizer-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuardService } from './auth-guard.service';
 import { LoginView, DashboardView, ResetPasswordView } from './views';
 
 @NgModule({
   declarations: [AppComponent, LoginView, DashboardView, ResetPasswordView],
   imports: [BrowserModule, AppRoutingModule, AuthorizerModule],
-  providers: [AuthorizerContextService, AuthGuardService],
+  providers: [AuthorizerContextService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
