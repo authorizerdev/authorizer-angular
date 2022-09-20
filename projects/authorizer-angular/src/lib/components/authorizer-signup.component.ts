@@ -59,7 +59,7 @@ import { passwordMatchingValidatior } from '../customValidators/password-matchin
             type="password"
             formControlName="password"
             placeholder="********"
-            class="form-input-field {{password?.errors?.['required'] && (password?.dirty) && 'input-error-content'}}"
+            class="form-input-field {{(password?.errors?.['required'] || signupForm.errors?.['notmatched']) && (password?.dirty) && 'input-error-content'}}"
           />
           <div
             *ngIf="password?.errors?.['required'] && (password?.dirty)"
@@ -83,7 +83,7 @@ import { passwordMatchingValidatior } from '../customValidators/password-matchin
             type="password"
             formControlName="confirmPassword"
             placeholder="********"
-            class="form-input-field {{confirmPassword?.errors?.['required'] && (confirmPassword?.dirty) && 'input-error-content'}}"
+            class="form-input-field {{(confirmPassword?.errors?.['required'] || signupForm.errors?.['notmatched']) && (confirmPassword?.dirty) && 'input-error-content'}}"
           />
           <div
             *ngIf="confirmPassword?.errors?.['required'] && (confirmPassword?.dirty)"
