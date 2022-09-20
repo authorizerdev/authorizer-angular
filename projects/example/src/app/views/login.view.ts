@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthorizerContextService } from 'authorizer-angular';
 
 @Component({
   selector: 'login-view',
@@ -18,5 +19,11 @@ import { Component } from '@angular/core';
   ],
 })
 export class LoginView {
-  constructor() {}
+  constructor(public contextService: AuthorizerContextService) {
+    contextService.getState().subscribe((state) => {
+      if (state.token) {
+        window.location.assign('/dashboard');
+      }
+    });
+  }
 }

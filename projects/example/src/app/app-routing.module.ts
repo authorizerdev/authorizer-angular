@@ -11,16 +11,16 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardView,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'reset-password',
     component: ResetPasswordView,
   },
-  {
-    path: '**',
-    redirectTo: '/',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '/',
+  // },
 ];
 
 @NgModule({

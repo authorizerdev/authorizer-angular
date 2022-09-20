@@ -6,12 +6,16 @@ export class AuthGuardService implements CanActivate {
   constructor(
     public contextService: AuthorizerContextService,
     public router: Router
-  ) {}
+  ) {
+    contextService
+      .getState()
+      .pipe()
+      .subscribe((state) => {
+        this.token = state.token;
+      });
+  }
   token: any;
   canActivate(): boolean {
-    this.contextService.getState().subscribe((state) => {
-      this.token = state.token;
-    });
     if (!this.token) {
       this.router.navigate(['/']);
       return false;
