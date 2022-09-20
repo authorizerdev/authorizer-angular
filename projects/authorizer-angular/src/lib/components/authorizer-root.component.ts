@@ -28,6 +28,7 @@ import { hasWindow } from '../utils/window';
         "
         [onSignup]="onSignup"
         [urlProps]="urlProps"
+        (changeView)="setView($event)"
       ></authorizer-signup>
       <authorizer-magic-link-login
         *ngIf="
