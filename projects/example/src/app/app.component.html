@@ -15,8 +15,7 @@
 <div class="container">
   <div class="component-warpper">
     <authorizer-provider [config]="{
-      authorizerURL: 'http://localhost:8080',
-      redirectURL: 'http://localhost:4000/dashboard'
+      authorizerURL: 'http://localhost:8080'
     }" [onStateChangeCallback]="stateChangeCallback.bind(this)">
       <router-outlet></router-outlet>
     </authorizer-provider>
