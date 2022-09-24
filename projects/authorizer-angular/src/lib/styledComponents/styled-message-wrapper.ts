@@ -8,8 +8,8 @@ import { MessageType } from '../constants';
       class="styled-message-wrapper"
       style="background-color: {{
         type === messageType.Error
-          ? 'var(--danger-color)'
-          : 'var(--success-color)'
+          ? 'var(--authorizer-danger-color)'
+          : 'var(--authorizer-success-color)'
       }}"
     >
       <ng-content></ng-content>
@@ -20,9 +20,9 @@ import { MessageType } from '../constants';
       .styled-message-wrapper {
         padding: 10px;
         color: white;
-        border-radius: var(--radius-card);
+        border-radius: var(--authorizer-radius-card);
         margin: 10px 0px;
-        font-size: var(--fonts-small-text);
+        font-size: var(--authorizer-fonts-small-text);
       }
     `,
   ],

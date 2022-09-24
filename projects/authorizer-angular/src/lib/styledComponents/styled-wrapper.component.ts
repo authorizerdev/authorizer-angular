@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styles: [
     `
       .styled-wrapper {
-        font-family: var(--fonts-font-stack);
-        color: var(--text-color);
-        font-size: var(--fonts-medium-text);
+        font-family: var(--authorizer-fonts-font-stack);
+        color: var(--authorizer-text-color);
+        font-size: var(--authorizer-fonts-medium-text);
         box-sizing: border-box;
         width: 100%;
         height: 100%;
