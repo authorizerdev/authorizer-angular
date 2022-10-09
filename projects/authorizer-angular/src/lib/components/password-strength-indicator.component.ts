@@ -55,6 +55,8 @@ import { validatePassword } from '../utils/common';
         <styled-flex>
           <input
             readOnly
+            (keydown)="$event.preventDefault()"
+            (click)="$event.preventDefault()"
             type="checkbox"
             [checked]="componentState.hasSixChar"
           />
@@ -65,6 +67,8 @@ import { validatePassword } from '../utils/common';
         <styled-flex>
           <input
             readOnly
+            (keydown)="$event.preventDefault()"
+            (click)="$event.preventDefault()"
             type="checkbox"
             [checked]="componentState.hasLowerCase"
           />
@@ -75,6 +79,8 @@ import { validatePassword } from '../utils/common';
         <styled-flex>
           <input
             readOnly
+            (keydown)="$event.preventDefault()"
+            (click)="$event.preventDefault()"
             type="checkbox"
             [checked]="componentState.hasUpperCase"
           />
@@ -85,6 +91,8 @@ import { validatePassword } from '../utils/common';
         <styled-flex>
           <input
             readOnly
+            (keydown)="$event.preventDefault()"
+            (click)="$event.preventDefault()"
             type="checkbox"
             [checked]="componentState.hasNumericChar"
           />
@@ -95,6 +103,8 @@ import { validatePassword } from '../utils/common';
         <styled-flex>
           <input
             readOnly
+            (keydown)="$event.preventDefault()"
+            (click)="$event.preventDefault()"
             type="checkbox"
             [checked]="componentState.hasSpecialChar"
           />
@@ -105,6 +115,8 @@ import { validatePassword } from '../utils/common';
         <styled-flex>
           <input
             readOnly
+            (keydown)="$event.preventDefault()"
+            (click)="$event.preventDefault()"
             type="checkbox"
             [checked]="componentState.maxThirtySixChar"
           />
