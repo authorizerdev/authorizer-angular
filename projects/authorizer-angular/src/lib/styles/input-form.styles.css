@@ -1,14 +1,14 @@
 .styled-form-group {
   width: 100%;
   border: 0px;
-  background-color: var(--white-color);
+  background-color: var(--authorizer-white-color);
   padding: 0 0 15px;
 }
 .form-input-label {
   padding: 2.5px;
 }
 .form-input-label > span {
-  color: var(--danger-color);
+  color: var(--authorizer-danger-color);
 }
 .form-input-field {
   width: 100%;
@@ -17,23 +17,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: var(--radius-input);
+  border-radius: var(--authorizer-radius-input);
   border: 1px;
   border-style: solid;
-  border-color: var(--text-color);
+  border-color: var(--authorizer-text-color);
 }
 .input-error-content {
-  border-color: var(--danger-color) !important;
+  border-color: var(--authorizer-danger-color) !important;
 }
 .input-error-content:hover {
-  outline-color: var(--danger-color);
+  outline-color: var(--authorizer-danger-color);
 }
 .input-error-content:focus {
-  outline-color: var(--danger-color);
+  outline-color: var(--authorizer-danger-color);
 }
 .form-input-error {
   font-size: 12px;
   font-weight: 400;
   color: red;
-  border-color: var(--danger-color);
+  border-color: var(--authorizer-danger-color);
 }

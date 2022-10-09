@@ -10,21 +10,21 @@ import { hasWindow } from '../utils/window';
   styles: [
     `
       :host {
-        --primary-color: #3b82f6;
-        --primary-disabled-color: #60a5fa;
-        --gray-color: #d1d5db;
-        --white-color: #ffffff;
-        --danger-color: #dc2626;
-        --success-color: #10b981;
-        --text-color: #374151;
-        --fonts-font-stack: -apple-system, system-ui, sans-serif;
-        --fonts-large-text: 18px;
-        --fonts-medium-text: 14px;
-        --fonts-small-text: 12px;
-        --fonts-tiny-text: 10px;
-        --radius-card: 5px;
-        --radius-button: 5px;
-        --radius-input: 5px;
+        --authorizer-primary-color: #3b82f6;
+        --authorizer-primary-disabled-color: #60a5fa;
+        --authorizer-gray-color: #d1d5db;
+        --authorizer-white-color: #ffffff;
+        --authorizer-danger-color: #dc2626;
+        --authorizer-success-color: #10b981;
+        --authorizer-text-color: #374151;
+        --authorizer-fonts-font-stack: -apple-system, system-ui, sans-serif;
+        --authorizer-fonts-large-text: 18px;
+        --authorizer-fonts-medium-text: 14px;
+        --authorizer-fonts-small-text: 12px;
+        --authorizer-fonts-tiny-text: 10px;
+        --authorizer-radius-card: 5px;
+        --authorizer-radius-button: 5px;
+        --authorizer-radius-input: 5px;
       }
     `,
   ],

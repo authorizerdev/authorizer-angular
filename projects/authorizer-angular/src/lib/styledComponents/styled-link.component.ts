@@ -13,7 +13,7 @@ import { Component, Input } from '@angular/core';
   styles: [
     `
       .styled-link {
-        color: var(--primary-color);
+        color: var(--authorizer-primary-color);
         cursor: pointer;
       }
     `,

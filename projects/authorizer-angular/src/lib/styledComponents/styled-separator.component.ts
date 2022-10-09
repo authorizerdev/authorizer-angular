@@ -14,12 +14,12 @@ import { Component } from '@angular/core';
       .styled-separator::before {
         content: '';
         flex: 1;
-        border-bottom: 1px solid var(--gray-color);
+        border-bottom: 1px solid var(--authorizer-gray-color);
       }
       .styled-separator::after {
         content: '';
         flex: 1;
-        border-bottom: 1px solid var(--gray-color);
+        border-bottom: 1px solid var(--authorizer-gray-color);
       }
       .styled-separator:not(:empty)::before {
         margin-right: 0.25em;

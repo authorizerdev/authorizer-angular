@@ -9,15 +9,15 @@ import { ButtonAppearance } from '../constants';
       style="width: {{ style['width'] }};
       background-color: {{
         disabled
-          ? 'var(--primary-disabled-color)'
+          ? 'var(--authorizer-primary-disabled-color)'
           : appearance === buttonAppearance.Primary
-          ? 'var(--primary-color)'
-          : 'var(--white-color)'
+          ? 'var(--authorizer-primary-color)'
+          : 'var(--authorizer-white-color)'
       }};
       color: {{
         appearance === buttonAppearance.Default
-          ? 'var(--text-color)'
-          : 'var(--white-color)'
+          ? 'var(--authorizer-text-color)'
+          : 'var(--authorizer-white-color)'
       }};
       border: {{ appearance === buttonAppearance.Primary ? '0px' : '1px' }};"
       [disabled]="disabled"
@@ -34,15 +34,15 @@ import { ButtonAppearance } from '../constants';
         align-items: center;
         min-width: 400px;
         max-height: 64px;
-        border-radius: var(--radius-button);
-        border-color: var(--text-color) !important;
+        border-radius: var(--authorizer-radius-button);
+        border-color: var(--authorizer-text-color) !important;
         border-style: solid !important;
         cursor: pointer;
         position: relative;
       }
       .styled-button:disabled {
         cursor: not-allowed;
-        background-color: var(--primary-disabled-color);
+        background-color: var(--authorizer-primary-disabled-color);
       }
     `,
   ],
