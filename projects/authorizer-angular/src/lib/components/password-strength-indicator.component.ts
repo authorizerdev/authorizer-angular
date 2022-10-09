@@ -150,7 +150,7 @@ export class PasswordStrengthIndicator implements OnChanges {
     if (changes['value']) {
       const validationData = validatePassword(this.value);
       this.componentState = validationData;
-      if (Object.values(validationData).some((isValid) => isValid === false)) {
+      if (!validationData.isValid) {
         this.onButtonStateChange.emit(true);
       } else {
         this.onButtonStateChange.emit(false);
