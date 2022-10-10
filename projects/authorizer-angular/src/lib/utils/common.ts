@@ -55,7 +55,24 @@ export const formatErrorMessage = (message: string) => {
   return message.replace(`[GraphQL] `, '');
 };
 
-export const validatePassword = (value = '') => {
+export const hasSpecialChar = (char: string): boolean => {
+  const re = /[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
+  return re.test(char);
+};
+
+export const validatePassword = (
+  value: string
+): {
+  score: number;
+  strength: string;
+  hasSixChar: boolean;
+  hasLowerCase: boolean;
+  hasUpperCase: boolean;
+  hasNumericChar: boolean;
+  hasSpecialChar: boolean;
+  maxThirtySixChar: boolean;
+  isValid: boolean;
+} => {
   const res = {
     score: 0,
     strength: '',
@@ -77,7 +94,7 @@ export const validatePassword = (value = '') => {
     res.maxThirtySixChar = true;
   }
 
-  Array.from(value).forEach((char) => {
+  Array.from(value).forEach((char: any) => {
     if (char >= 'A' && char <= 'Z' && !res.hasUpperCase) {
       res.score = res.score + 1;
       res.hasUpperCase = true;
@@ -87,15 +104,13 @@ export const validatePassword = (value = '') => {
     } else if (char >= '0' && char <= '9' && !res.hasNumericChar) {
       res.score = res.score + 1;
       res.hasNumericChar = true;
-    } else if (!res.hasSpecialChar) {
+    } else if (hasSpecialChar(char) && !res.hasSpecialChar) {
       res.score = res.score + 1;
       res.hasSpecialChar = true;
     }
   });
 
-  if (res.score === 0) {
-    res.strength = '';
-  } else if (res.score <= 2) {
+  if (res.score <= 2) {
     res.strength = 'Weak';
   } else if (res.score <= 4) {
     res.strength = 'Good';
